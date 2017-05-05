@@ -6,6 +6,7 @@ let ArtlistsSchema = new mongoose.Schema({
     loginname: String
   },
   author_id: String,
+  content: String,
   create_at: String,
   good: String,
   id: String,

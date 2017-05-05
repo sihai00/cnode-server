@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 const common = require('../app/controllers/common.js')
-const artlists = require('../app/controllers/artlists.js')
+// const artlists = require('../app/controllers/artlists.js')
 const article = require('../app/controllers/article.js')
 let router = new Router()
 
@@ -13,8 +13,8 @@ router.get('/404', async ( ctx )=>{
 })
 
 // 获取列表数据
-router.get('/topics', artlists.artlists)
-// router.get('/topic', article.article)
+router.get('/topics', article.artlists)
+router.get('/topic/:id', article.article)
 
 router.get('/helloworld', async ( ctx )=>{
   ctx.body = 'helloworld page!'
