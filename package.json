@@ -1,0 +1,22 @@
+{
+  "name": "cnode-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sihai",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.1.1",
+    "koa-session": "^5.0.0",
+    "mongoose": "^4.9.7",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
+}
