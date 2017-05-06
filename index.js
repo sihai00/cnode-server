@@ -18,8 +18,8 @@ db.once('open', function (callback) {
 })
 
 app.use(logger())
-app.use(session(app))
 app.use(bodyparser())
+app.use(session(app))
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(3000)

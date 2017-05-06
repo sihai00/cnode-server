@@ -14,20 +14,26 @@ exports.article = async (ctx)=>{
   // 存储数据
   if (data && data.success) {
     let res = data.data
-    
-    await new CommentModel({
-      article_id: res.id,
-      replies: res.replies,
-      reply_count: res.reply_count
-    }).save()
+    res.replies.forEach( async (v, i) => {
+      await new CommentModel({
+        author:{
+          avatar_url: v.author.avatar_url,
+          loginname: v.author.loginname
+        },
+        content: v.content,
+        create_at: v.create_at,
+        id: v.id,
+        is_uped: v.is_uped,
+        reply_id: v.reply_id,
+        ups: v.ups,
+        article_id: ctx.params.id
+      }).save()
+    })
   }else{
     console.log(data.message)
   }
 
   // 获取数据
-  let comment = await CommentModel.findOne({
-    article_id: ctx.params.id
-  }).lean()
   let article = await ArticleModel.findOne({
     id: ctx.params.id
   }).lean()
@@ -38,8 +44,12 @@ exports.article = async (ctx)=>{
     avatar_url: author.avatar_url,
     loginname: author.loginname
   }
-  article.replies = comment.replies
-  article.reply_count = comment.reply_count
+  let comment = await CommentModel.find({
+    article_id: ctx.params.id
+  }).lean()
+
+  article.replies = comment
+  article.reply_count = comment.length
 
   ctx.set('Access-Control-Allow-Origin', '*')
   ctx.body = {
