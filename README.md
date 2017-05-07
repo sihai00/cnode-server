@@ -1,10 +1,9 @@
 # cnode-server
-把koa2作为中间层，对cnode社区公开的api数据进行组合操作后存入mongodb中，再返回处理后的数据。
+把koa2作为中间层，对cnode社区公开的api数据进行组合操作后存入mongodb中，再返回处理后的数据。\
+目的主要还是为了上手koa2和mongodb（如果你看了我的代码后会发现，实际开发中是没必要像我这样把请求到的数据存入数据库后再原样拿出来的傻逼操作哈哈。\
 
-![image](https://github.com/sihai00/cnode-server/blob/master/cnode-server.png)
-目的主要还是为了上手koa2和mongodb（如果你看了我的代码后会发现，实际开发中是没必要像我这样把请求到的数据存入数据库后再原样拿出来的傻逼操作哈哈。一般都会对请求回来的数据做一定的组装，前端可以按需求组装，后端大大不用考虑前端的业务部分而专注于数据的处理和服务器的性能，如下盗图）
-![image](https://segmentfault.com/img/bVI1km?w=590&h=611/view)
-更好的前后端解耦
+![image](https://github.com/sihai00/cnode-server/blob/master/cnode-server.png)\
+把node作为中间层是为了更好的前后端解耦。一般都会对请求回来的数据做一定的组装，前端可以按需求组装，后端大大不用考虑前端的业务部分而专注于数据的处理和服务器的性能，如下盗图\
 
 ## Build Setup
 ``` bash
