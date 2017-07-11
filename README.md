@@ -6,7 +6,7 @@
 把node作为中间层是为了更好的前后端解耦。一般都会对请求回来的数据做一定的组装，前端可以按需求组装，后端大大不用考虑前端的业务部分而专注于数据的处理和服务器的性能
 
 ## Build Setup
-``` Shell
+```JavaScript
 // 安装mongodb数据库（我用的是brew）
 brew install mongodb
 
@@ -21,7 +21,7 @@ node index.js
 ```
 
 关于mongodb的一些操作
-```Shell
+```JavaScript
 // 查询mongodb数据库
 mongo
 
